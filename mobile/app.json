@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "@furia-hub/mobile",
-    "slug": "@furia-hub/mobile",
+    "name": "furia-hub-mobile",
+    "slug": "furia-hub-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.matheus8174.furiahubmobile"
     },
     "web": {
       "bundler": "metro",
@@ -44,6 +45,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "c705fd39-820f-498f-9a8a-a5b33a384750"
+      }
     }
   }
 }
