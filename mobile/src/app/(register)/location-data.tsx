@@ -1,11 +1,11 @@
 import { View } from 'react-native';
 
-import { Controller, useFormContext } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 
 import Text from '@/components/ui/text';
 import Button from '@/components/ui/button';
 import colors from '@/components/ui/colors';
-import { ControlledInput, Input } from '@/components/ui/input';
+import { ControlledInput } from '@/components/ui/input';
 
 import { LocationSchema, locationSchema } from '@/schemas/createUserSchema';
 import { getDataByCep } from '@/services/cep';
@@ -51,7 +51,7 @@ function PersonalData() {
       shouldFocus: true
     });
 
-    router.push('/(register)/personal-data');
+    if (output) router.push('/(register)/personal-data');
   }
 
   return (
@@ -67,7 +67,7 @@ function PersonalData() {
 
       <KeyboardAwareScrollView
         showsVerticalScrollIndicator={false}
-        className=" flex-1"
+        className="flex-1"
       >
         <View className="gap-10 flex-1">
           <ControlledInput
@@ -121,6 +121,7 @@ function PersonalData() {
             submitBehavior="submit"
             onSubmitEditing={() => setFocus('number')}
             returnKeyType="next"
+            autoCapitalize="words"
             label="Endereço*"
             className="h-16"
             name="adreass"
