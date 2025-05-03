@@ -21,7 +21,10 @@ function Welcome() {
       </Text>
 
       <View className="gap-8 w-full my-28">
-        <Button className="bg-black-200/50 rounded-full w-full">
+        <Button
+          className="bg-black-200/50 rounded-full w-full"
+          onPress={() => router.push('/login')}
+        >
           <Text>Log in</Text>
         </Button>
 
