@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link, Redirect, router } from 'expo-router';
+import { Link, router } from 'expo-router';
 import { useFormContext } from 'react-hook-form';
 import { ImageBackground, View } from 'react-native';
 
@@ -30,7 +30,6 @@ function Register() {
 
   return (
     <View className="flex-1">
-      <Redirect href="/(register)/location-data" />
       <View className="absolute top-7 right-7">
         <View className="size-60 bg-black-600/90 absolute z-10" />
 
@@ -48,7 +47,7 @@ function Register() {
               control={control}
               onSubmitEditing={() => setFocus('email')}
               submitBehavior="submit"
-              name="name"
+              name="nick"
               placeholder="Nick name"
               Icon={User}
               className="bg-black-200/80"
