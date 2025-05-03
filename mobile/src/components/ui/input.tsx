@@ -24,7 +24,7 @@ import { cn } from '@/utils/cn';
 
 const inputTv = tv({
   slots: {
-    label: 'text-white-200 mb-2',
+    label: 'text-white-200 mb-2 font-regular',
     input: 'grow items-center h-20 text-white-100 text-lg',
     container:
       'gap-4 flex-row border border-transparent bg-black-200 rounded-xl overflow-hidden'
@@ -87,7 +87,7 @@ export const Input = React.forwardRef<NTextInput, InputProps>(
     });
 
     return (
-      <View className="min-w-max flex-1">
+      <View className="">
         {label && <Text className={styles.label()}>{label}</Text>}
         <View className={styles.container()}>
           {Icon && (
