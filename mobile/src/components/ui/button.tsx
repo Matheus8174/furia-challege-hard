@@ -1,19 +1,30 @@
+import React from 'react';
+
+import { cn } from '@/utils/cn';
 import type { PropsWithChildren } from 'react';
 
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
-import { twMerge } from 'tailwind-merge';
+export type ButtonRef = {
+  disable: (d: boolean) => void;
+};
 
-function Button({
-  children,
-  className,
-  ...rest
-}: PropsWithChildren<TouchableOpacityProps>) {
+const Button = React.forwardRef<
+  ButtonRef,
+  PropsWithChildren<TouchableOpacityProps>
+>(({ children, className, disabled, ...rest }, forwardRef) => {
+  const [disable, setDisable] = React.useState(disabled);
+
+  React.useImperativeHandle(forwardRef, () => ({
+    disable: (d: boolean) => setDisable(d)
+  }));
+
   return (
     <TouchableOpacity
+      disabled={disable}
       activeOpacity={0.7}
-      className={twMerge(
-        'rounded-xl items-center justify-center p-5 bg-black-200',
+      className={cn(
+        'rounded-xl items-center justify-center p-5 bg-black-200 disabled:opacity-75',
         className
       )}
       {...rest}
@@ -21,6 +32,6 @@ function Button({
       {children}
     </TouchableOpacity>
   );
-}
+});
 
 export default Button;
