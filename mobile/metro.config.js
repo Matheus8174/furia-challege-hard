@@ -14,7 +14,7 @@ config.transformer = {
 
 config.resolver = {
   ...resolver,
-  assetExts: resolver.assetExts.filter((ext) => ext !== 'svg'),
+  assetExts: [...resolver.assetExts.filter((ext) => ext !== 'svg'), 'tflite'],
   sourceExts: [...resolver.sourceExts, 'svg']
 };
 
