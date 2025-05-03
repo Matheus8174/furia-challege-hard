@@ -1,9 +1,11 @@
 import Button from '@/components/ui/button';
 import colors from '@/components/ui/colors';
-import { ControlledInput, Input } from '@/components/ui/input';
+import Dropdown from '@/components/ui/drop-down';
+import { ControlledInput } from '@/components/ui/input';
 import Text from '@/components/ui/text';
 import {
   PersonalDataSchema,
+  gender,
   personalDataSchema
 } from '@/schemas/createUserSchema';
 import {
@@ -12,6 +14,7 @@ import {
   formatDate
 } from '@/utils/formatters';
 import { Feather } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import { Controller, useFormContext } from 'react-hook-form';
 import { View } from 'react-native';
 import {
@@ -20,15 +23,7 @@ import {
 } from 'react-native-keyboard-controller';
 
 function PersonalData() {
-  const {
-    control,
-    trigger,
-    setFocus,
-    getValues,
-    setValue,
-    resetField,
-    setError
-  } = useFormContext<PersonalDataSchema>();
+  const { control, trigger, setFocus } = useFormContext<PersonalDataSchema>();
 
   async function handleSubmit() {
     const schemaFields = personalDataSchema.keyof().options;
@@ -37,7 +32,7 @@ function PersonalData() {
       shouldFocus: true
     });
 
-    console.log(getValues());
+    if (output) router.push('/(register)/interests');
   }
 
   return (
@@ -55,7 +50,7 @@ function PersonalData() {
 
       <KeyboardAwareScrollView
         showsVerticalScrollIndicator={false}
-        className=" flex-1"
+        className="flex-1"
       >
         <View className="gap-10 flex-1">
           <ControlledInput
@@ -64,6 +59,9 @@ function PersonalData() {
             placeholder="000.000.000-00"
             label="CPF*"
             className="h-16"
+            submitBehavior="submit"
+            returnKeyType="next"
+            onSubmitEditing={() => setFocus('name')}
             maxLength={14}
             formatter={formatCpf}
             keyboardType="numeric"
@@ -72,7 +70,11 @@ function PersonalData() {
           <ControlledInput
             control={control}
             name="name"
+            autoCapitalize="sentences"
             className="h-16"
+            submitBehavior="submit"
+            returnKeyType="next"
+            onSubmitEditing={() => setFocus('birthdate')}
             label="Nome completo*"
             placeholder="Exemplo: José da Silva"
           />
@@ -82,6 +84,9 @@ function PersonalData() {
             name="birthdate"
             maxLength={10}
             className="h-16"
+            submitBehavior="submit"
+            returnKeyType="next"
+            onSubmitEditing={() => setFocus('phoneNumber')}
             formatter={formatDate}
             keyboardType="numeric"
             placeholder="dd/mm/aaaa"
@@ -94,13 +99,24 @@ function PersonalData() {
             name="phoneNumber"
             keyboardType="numeric"
             label="Número de telefone*"
-            submitBehavior="submit"
             maxLength={16}
             className="h-16"
             returnKeyType="next"
             placeholder="(99) 91234-5678"
           />
 
+          <View className="gap-2">
+            <Text className="text-white-200">Como você se indentifica?</Text>
+            <Controller
+              control={control}
+              name="gender"
+              render={({ field }) => (
+                <Dropdown onChange={field.onChange} data={gender}>
+                  Selecione seu gênero
+                </Dropdown>
+              )}
+            />
+          </View>
           <Button
             className="bg-white-300 flex-row gap-2 mt-4"
             onPress={handleSubmit}
