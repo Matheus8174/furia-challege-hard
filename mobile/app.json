@@ -14,7 +14,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) Precisa de acesso à sua câmera."
+      },
+      "bundleIdentifier": "com.matheus8174.furiahubmobile"
     },
     "android": {
       "softwareKeyboardLayoutMode": "pan",
@@ -22,7 +26,10 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.matheus8174.furiahubmobile"
+      "package": "com.matheus8174.furiahubmobile",
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -30,6 +37,14 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ],
       "expo-router",
       [
         "expo-font",
@@ -41,7 +56,15 @@
           ]
         }
       ],
-      "expo-localization"
+      "expo-localization",
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) Precisa de acesso à sua câmera."
+        }
+      ],
+      "expo-build-properties",
+      "react-native-fast-tflite"
     ],
     "experiments": {
       "typedRoutes": true
