@@ -74,7 +74,7 @@ To get started with this project, ensure you have the following technologies ins
     EXPIRES_IN="2d"
   ```
 
-- the easiest why to set up the database is using docker
+- the easiest why to set up the database is by using docker
 
   ```sh
     docker-compose up -d
@@ -108,6 +108,8 @@ the app contains a database dashboard you can see it by running this script
   ```
 
 #### Swagger documentation
+
+You can see the Swagger docs by accessing `/docs` in your browser after running the server.
 
 ## 💎 Libraries used
 
