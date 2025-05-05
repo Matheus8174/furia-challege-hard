@@ -20,62 +20,94 @@ furia-hub
       └─ drizzle orm
 ```
 
-## Frontend (mobile)
+## ⭐ Frontend (mobile)
 
 The frontend was built using expo with react-native.
 
 ### How to run the mobile project
 
-- You need to have node.js installed in the most recents versions this project was built using node 22
-- after install node type it to know if its installed correctly
+To get started with this project, ensure you have the following technologies installed on your computer:
 
-```sh
-  node --v && npm --v
-```
+- **Node.js**: This project was developed using Node.js version **20.16**.
+- **NPM**: This project was developed using Node.js version **10.9.2**.
 
 - now install all the dependencies using npm
 
-```sh
-  npm install
-```
+  ```sh
+    npm install
+  ```
 
 - [to run the app in your smatphone install the app's development build in it, click here to install](https://drive.google.com/file/d/1H1fpcg64RGy6hDLL4W5TqjgNVSW-1fuM/view?usp=drivesdk)
 
-- in your terminal type it and scan the qr code that will show up to open the app in your smartphone
+- 🎉 in your terminal run the app and scan the qr code that will show up to open the app in your smartphone
 
-```sh
-  npm start
-```
+  ```sh
+    npm start
+  ```
 
-## Backend
+## ⭐ Backend
 
 ### How to run the server project
 
-- You need to have node.js installed in the most recents versions this project was built using node 22
-- after install node type it to know if its installed correctly
+To get started with this project, ensure you have the following technologies installed on your computer:
 
-```sh
-  node --v && npm --v
-```
+- **Node.js**: This project was developed using Node.js version **20.16**.
+- **NPM**: This project was developed using Node.js version **10.9.2**.
 
-- now install all the dependencies using npm
+- install all the dependencies using npm
 
-```sh
-  npm install
-```
+  ```sh
+    npm install
+  ```
+
+- create and fill a **.env** file, follow the .env.example as guide, or for tests just copy this example
+
+  ```js
+    DATABASE_URL="postgres://myuser:mypassword@127.0.0.1:5432/mydatabase"
+
+    REDIS_URL="redis://127.0.0.1:6379/"
+
+    PORT="8080"
+    HOST="127.0.0.1"
+
+    JWT_SECRET="7d05015fe82c807af272059a596644771b8d5af7076a89c1bf26b2cd4dd06f9a"
+    EXPIRES_IN="2d"
+  ```
 
 - the easiest why to set up the database is using docker
 
-```sh
-  docker-compose up -d
-```
+  ```sh
+    docker-compose up -d
+  ```
 
-```sh
-  # to check the containers
-  docker ps
-```
+  ```sh
+    # to check the containers
+    docker ps
+  ```
 
-- now push the migrations to the database
+- now push the migrations to the database using drizzle cli
+
+  ```sh
+    npm run migration:migrate
+    # or
+    npx run drizzle-kit migrate
+  ```
+
+- 🎉 run the server
+
+  ```sh
+    npm run dev
+  ```
+
+### Database dashboard
+
+the app contains a database dashboard you can see it by running this script
+
+  ```sh
+    npm run studio
+  ```
+
+#### Swagger documentation
 
 ## 💎 Libraries used
 
