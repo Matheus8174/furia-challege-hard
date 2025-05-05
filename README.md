@@ -20,6 +20,18 @@ furia-hub
       └─ drizzle orm
 ```
 
+## 🧠 I.A
+
+This project use some machine learning models for **face recognization** and **ocr**
+
+### Front-end
+
+we use Media Pipe Face Detector model with Tensor Flow Lite to run **face recognization** in every frame of the users camera.
+
+### Back-end
+
+We use [teceract.js](https://github.com/naptha/tesseract.js) and [face-api.js](https://github.com/justadudewhohacks/face-api.js) to make **face recognization** and **ocr**
+
 ## ⭐ Frontend (mobile)
 
 The frontend was built using expo with react-native.
