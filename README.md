@@ -1,52 +1,40 @@
-# 💡 Crie uma solução que entenda mais sobre o fã da FURIA, usando dados pessoais, redes sociais e interações
+# Furia Hub
 
-## Visão Geral
+O Furia hub is a mobile application where users can send the preferences and personal data to Furia
 
-Rede social onde torcedores da FURIA podem se encontrar, acompanhar a campanha do time nos diversos e‑sports e se conectar com outros fãs.
+## Frontend (mobile)
 
-## Requisitos Funcionais (RF)
+The frontend was built using expo with react-native.
 
-### Onboarding Personalizado
+```text
+furia-hub
+  ├─ mobile
+  |   ├─ Expo SDK 52
+  |   ├─ React Native using React 18
+  |   ├─ Navigation using Expo Router
+  |   ├─ style using NativeWind
+  |   └─ forms and validation using react-hook-form and zod
+  └─ server
+      ├─ Fastfy
+      ├─ schema validation using zod
+      ├─ documentation using swagger
+      ├─ postgres database and redis for cache
+      └─ drizzle orm
+```
 
-- O usuário responderá a um breve questionário para mapear suas preferências (jogos, papéis favoritos, tipos de conteúdo).
+## 💎 Libraries used
 
-### Home Page Customizada
-
-- O usuário poderá escolher quais e‑sports (Valorant, CS, LoL etc.) quer seguir.
-A home exibirá notícias, vídeos e atualizações exclusivas para os e‑sports selecionados.
-
-### Notificações de Partidas
-
-- Usuários poderão ativar alertas para novas partidas da FURIA em cada e‑sport de interesse.
-
-- As notificações incluirão data, hora, adversário e onde assistir.
-
-### Compartilhamento de Highlights
-
-- Postagem e visualização de vídeos curtos (clips), com sistema de curtidas e comentários.
-
-- Destaque semanal dos melhores vídeos enviados pela comunidade.
-
-### Feed Social
-
-- Criação de posts ricos (texto, imagem, vídeo) e comentários em publicações de outros torcedores.
-
-- Sistema de moderação automática para manter a comunidade saudável.
-
-### Calendário Completo
-
-- Exibição do calendário de jogos da FURIA, resultados passados e escalação (line‑up) de cada partida.
-
-- Filtros por e‑sport e por data.
-
-### Descoberta de Torcedores Próximos
-
-- Compartilhamento opcional de localização para encontrar outros usuários com gostos semelhantes.
-
-- Busca por fãs em raio personalizável (ex.: 5 km, 10 km).
-
-### Watch Party Integrada
-
-- Sessões de “assistir junto” via YouTube com chat em tempo real.
-
-- Agendamento de eventos virtuais (pré‑game, pós‑game) dentro da plataforma.
+- [Expo](https://docs.expo.io/)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
+- [Nativewind](https://www.nativewind.dev/v4/overview)
+- [Axios](https://axios-http.com/docs/intro)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
+- [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/docs/)
+- [React Native Svg](https://github.com/software-mansion/react-native-svg)
+- [Expo Image](https://docs.expo.dev/versions/unversioned/sdk/image/)
+- [React Native Keyboard Controller](https://github.com/kirillzyusko/react-native-keyboard-controller)
+- [React Native Safe Area Context](https://github.com/th3rdwave/react-native-safe-area-context)
+- [React Native Screens](https://github.com/software-mansion/react-native-screens)
+- [Tailwind Variants](https://www.tailwind-variants.org/)
+- [Zod](https://zod.dev/)
