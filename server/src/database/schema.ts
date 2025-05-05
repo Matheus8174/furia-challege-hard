@@ -40,5 +40,3 @@ export const user = pgTable('users', {
   phoneNumber: text('phone_number').notNull(),
   state: text('state').notNull()
 });
-
-// {"adreass": "Rua João Pedro Longo ", "birthdate": 2002-01-02T02:00:00.000Z, "cep": "45675-000", "city": "Aurelino Leal", "complement": undefined, "cpf": "083.731.465-80", "email": "souzamatheus8174@gmail.com", "events": ["CBLOL/LTASUL", "Valorant Champions Tour"], "facePhoto": "/data/user/0/com.matheus8174.furiahubmobile/cache/mrousavy3593802058571380403.jpg", "games": ["CS2 (Counter-Strike 2)", "Valorant"], "gender": "Masculino", "name": "Matheus Santos Araújo da Silva", "neighborhood": "Centro", "nick": "Ocin", "number": "21", "orgs": ["Fluxo"], "password": "817440", "phoneNumber": "(73) 9 8248-7173", "platforms": ["Twitter (X)", "Instagram"], "products": "Camisas ou produtos oficiais", "rgPhoto": ["/data/user/0/com.matheus8174.furiahubmobile/cache/mrousavy6576472505579183047.jpg", "/data/user/0/com.matheus8174.furiahubmobile/cache/mrousavy605945869140312967.jpg"], "spentMoney": 100, "state": "Bahia"}
